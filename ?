@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Pregunta Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="passwordScreen" class="box">
+            <h2>Ingresa la contraseña secreta</h2>
+            <input type="password" id="passwordInput">
+            <button class="button" onclick="checkPassword()">Entrar</button>
+        </div>
+        
+        <div id="mainContent" class="hidden">
+            <div class="box">
+                <h1>¿Quieres ser mi novia? ❤️</h1>
+                <button class="button" onclick="alert('¡Sabía que dirías que sí! 💖')">Sí</button>
+                <button class="button" onclick="alert('¡No hay otra opción! 😆')">¡Por supuesto!</button>
+            </div>
+            
+            <div class="box">
+                <h2>Nuestros recuerdos 💕</h2>
+                <div class="gallery">
+                    <img src="foto1.jpg" alt="Recuerdo 1">
+                    <img src="foto2.jpg" alt="Recuerdo 2">
+                    <img src="foto3.jpg" alt="Recuerdo 3">
+                </div>
+            </div>
+            
+            <div class="box">
+                <h2>Un mensaje especial 💌</h2>
+                <p>Desde el primer momento en que te vi, supe que eras especial. Cada día a tu lado es un regalo, y quiero seguir compartiendo momentos inolvidables contigo. ❤️</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === 'tucontraseña') { // Cambia esto por la contraseña que quieras
+                document.getElementById('passwordScreen').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            } else {
+                alert('Contraseña incorrecta, intenta de nuevo.');
+            }
+        }
+    </script>
+</body>
+</html>
